@@ -1,7 +1,9 @@
 from flask import Flask, request, render_template_string
 from honeynet.logger import log_attempt
+from honeynet.iot_api import iot_api
 
 app = Flask(__name__)
+app.register_blueprint(iot_api) 
 
 LOGIN_HTML = """
 <!DOCTYPE html>
